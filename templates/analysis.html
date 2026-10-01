@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SkillBridge AI - Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        SkillBridge AI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/profile">
+            Analyze Again
+        </a>
+
+    </div>
+
+</nav>
+
+
+<section class="dashboard">
+
+<div class="dashboard-container">
+
+
+<!-- HEADER -->
+
+<div class="dashboard-header">
+
+    <div>
+
+        <p class="tagline">
+            CAREER ANALYSIS
+        </p>
+
+        <h1>
+            Hello {{ name }} 👋
+        </h1>
+
+        <p class="dashboard-subtitle">
+
+            Here's your career readiness report for
+
+            <strong>
+                {{ target_role }}
+            </strong>.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- READINESS SCORE -->
+
+<div class="dashboard-score">
+
+    <div>
+
+        <p class="small-title">
+            CAREER READINESS
+        </p>
+
+        <div class="big-score">
+            {{ readiness_score }}%
+        </div>
+
+        <p class="score-text">
+
+            Your current skills match
+            {{ readiness_score }}%
+            of the required skills.
+
+        </p>
+
+    </div>
+
+
+    <div class="score-message">
+
+        {% if readiness_score < 40 %}
+
+            <h2>
+                🌱 You're Getting Started
+            </h2>
+
+            <p>
+                Focus on your missing skills
+                and follow the recommended roadmap.
+            </p>
+
+        {% elif readiness_score < 70 %}
+
+            <h2>
+                🚀 You're Making Progress
+            </h2>
+
+            <p>
+                Strengthen your missing skills
+                to become job-ready.
+            </p>
+
+        {% else %}
+
+            <h2>
+                🏆 You're Almost Job-Ready
+            </h2>
+
+            <p>
+                Keep improving your remaining
+                skill gaps.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+<!-- SKILLS -->
+
+<div class="dashboard-grid">
+
+
+<!-- STRENGTHS -->
+
+<div class="dashboard-card">
+
+    <div class="card-title">
+
+        <span>✅</span>
+
+        <h2>
+            Your Strengths
+        </h2>
+
+    </div>
+
+
+    {% if matched_skills %}
+
+        {% for skill in matched_skills %}
+
+        <div class="dashboard-skill matched-skill">
+
+            <span>✓</span>
+
+            {{ skill }}
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>
+            No matching skills yet.
+        </p>
+
+    {% endif %}
+
+</div>
+
+
+<!-- SKILLS TO LEARN -->
+
+<div class="dashboard-card">
+
+    <div class="card-title">
+
+        <span>⚠️</span>
+
+        <h2>
+            Skills To Learn
+        </h2>
+
+    </div>
+
+
+    {% if missing_skills %}
+
+        {% for skill in missing_skills %}
+
+        <div class="dashboard-skill missing-skill">
+
+            <span>→</span>
+
+            {{ skill }}
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>
+            🎉 No major skill gaps!
+        </p>
+
+    {% endif %}
+
+</div>
+
+</div>
+
+
+<!-- CAREER PROFILE -->
+
+<div class="profile-summary">
+
+    <h2>
+        Your Career Profile
+    </h2>
+
+
+    <div class="profile-details">
+
+
+        <div>
+
+            <span>
+                Education
+            </span>
+
+            <strong>
+                {{ degree }}
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Experience
+            </span>
+
+            <strong>
+                {{ experience }}
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Target Role
+            </span>
+
+            <strong>
+                {{ target_role }}
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CAREER RECOMMENDATIONS -->
+
+<div class="career-recommendation">
+
+    <div class="card-title">
+
+        <span>🎯</span>
+
+        <h2>
+            Recommended Careers
+        </h2>
+
+    </div>
+
+
+    <p class="recommendation-subtitle">
+
+        Based on your current skills,
+        these career paths match your profile.
+
+    </p>
+
+
+    <div class="career-list">
+
+        {% if career_recommendations %}
+
+            {% for career in career_recommendations %}
+
+            <div class="career-card">
+
+                <div class="career-header">
+
+                    <div class="career-name">
+
+                        {% if loop.index == 1 %}
+                            🥇
+                        {% elif loop.index == 2 %}
+                            🥈
+                        {% elif loop.index == 3 %}
+                            🥉
+                        {% endif %}
+
+                        <strong>
+                            {{ career.role }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="career-percentage">
+
+                        {{ career.match }}%
+
+                    </div>
+
+                </div>
+
+
+                <div class="career-match">
+                    <span>{{ career.match }}% Match</span>
+                </div>
+
+
+                <p class="career-match-text">
+
+                    {{ career.match }}% skill match
+
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>
+                No career recommendations available yet.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+<!-- BUTTONS -->
+
+<div class="action-buttons">
+
+    <a href="{{ url_for(
+        'roadmap',
+        skills=missing_skills|join(',')
+    ) }}">
+
+        <button type="button">
+            📚 View My Learning Roadmap →
+        </button>
+
+    </a>
+
+
+    <a href="/profile">
+
+        <button type="button">
+            🔄 Analyze Again
+        </button>
+
+    </a>
+
+</div>
+
+
+</div>
+
+</section>
+
+</body>
+
+</html>

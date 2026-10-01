@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SkillBridge AI - Learning Roadmap</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        SkillBridge AI
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/profile">Analyze Again</a>
+    </div>
+
+</nav>
+
+
+<section class="roadmap-section">
+
+    <div class="roadmap-container">
+
+        <div class="roadmap-header">
+
+            <p class="tagline">
+                PERSONALIZED LEARNING
+            </p>
+
+            <h1>
+                Your Learning Roadmap 🚀
+            </h1>
+
+            <p>
+                Learn each missing skill step by step
+                with a recommended number of days.
+            </p>
+
+        </div>
+
+
+        {% if roadmap %}
+
+        <div class="roadmap-list">
+
+            {% for item in roadmap %}
+
+            <div class="roadmap-card">
+
+                <div class="roadmap-number">
+                    {{ loop.index }}
+                </div>
+
+                <div class="roadmap-content">
+
+                    <h2>
+                        {{ item.skill }}
+                    </h2>
+
+                    <div class="days-badge">
+                        ⏱ {{ item.days }} Days
+                    </div>
+
+                    <div class="learning-days">
+
+                        {% for day in item.plan %}
+
+                        <div class="learning-day">
+
+                            <strong>
+                                Day {{ loop.index }}
+                            </strong>
+
+                            <span>
+                                {{ day }}
+                            </span>
+
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="roadmap-empty">
+
+            <div class="success-icon">
+                🎉
+            </div>
+
+            <h2>
+                No Major Skill Gaps!
+            </h2>
+
+            <p>
+                You already have the required skills
+                for your selected career.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+        <div class="roadmap-actions">
+
+            <a href="/profile">
+                <button type="button">
+                    🔄 Analyze Again
+                </button>
+            </a>
+
+            <a href="/">
+                <button type="button">
+                    🏠 Back to Home
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

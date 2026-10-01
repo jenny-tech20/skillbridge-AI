@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SkillBridge AI - Profile</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        SkillBridge AI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="#">
+            About
+        </a>
+
+        <a href="#">
+            How It Works
+        </a>
+
+    </div>
+
+</nav>
+
+
+<section class="profile-section">
+
+    <div class="profile-container">
+
+        <h1>
+            Tell Us About Yourself
+        </h1>
+
+        <p class="profile-description">
+            Enter your current skills and target career.
+            SkillBridge AI will identify your skill gaps.
+        </p>
+
+
+        <form action="/analyze" method="POST">
+
+            <!-- NAME -->
+
+            <label>
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <!-- DEGREE -->
+
+            <label>
+                Degree / Education
+            </label>
+
+            <input
+                type="text"
+                name="degree"
+                placeholder="Example: B.Tech AI & DS"
+                required
+            >
+
+
+            <!-- SKILLS -->
+
+            <label>
+                Current Skills
+            </label>
+
+            <textarea
+                name="skills"
+                placeholder="Example: Python, SQL, Pandas"
+                required></textarea>
+
+
+            <!-- TARGET ROLE -->
+
+            <label>
+                Target Job Role
+            </label>
+
+            <select name="target_role" required>
+
+                <option value="">
+                    -- Select Target Job Role --
+                </option>
+
+                {% for role in roles %}
+
+                <option value="{{ role }}">
+                    {{ role }}
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+
+            <!-- EXPERIENCE -->
+
+            <label>
+                Experience Level
+            </label>
+
+            <select name="experience" required>
+
+                <option value="">
+                    Select experience
+                </option>
+
+                <option value="Beginner">
+                    Beginner
+                </option>
+
+                <option value="Intermediate">
+                    Intermediate
+                </option>
+
+                <option value="Advanced">
+                    Advanced
+                </option>
+
+            </select>
+
+
+            <!-- BUTTON -->
+
+            <button type="submit">
+                Analyze My Skills →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillBridge AI - Analysis Result</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        h2 {
+            color: #2563eb;
+            margin-top: 30px;
+        }
+
+        .student {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        ul {
+            line-height: 2;
+        }
+
+        .skill {
+            display: inline-block;
+            background: #e0ecff;
+            color: #1d4ed8;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+        }
+
+        .button {
+            display: block;
+            width: 200px;
+            margin: 30px auto 0;
+            padding: 12px;
+            text-align: center;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚀 SkillBridge AI</h1>
+
+    <div class="student">
+        <strong>Student:</strong> {{ name }}
+    </div>
+
+    <div class="student">
+        <strong>Career Goal:</strong> {{ career }}
+    </div>
+
+    <h2>📊 Your Current Skills</h2>
+
+    <div class="box">
+        {% for skill in skills %}
+            <span class="skill">{{ skill }}</span>
+        {% endfor %}
+    </div>
+
+    <h2>⚠️ Skill Gap</h2>
+
+    <div class="box">
+        {% if missing_skills %}
+            <ul>
+                {% for skill in missing_skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>🎉 Great! No major skill gaps found.</p>
+        {% endif %}
+    </div>
+
+    <h2>📚 Recommended Skills to Learn</h2>
+
+    <div class="box">
+        {% if recommendations %}
+            <ul>
+                {% for skill in recommendations %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Continue improving your existing skills.</p>
+        {% endif %}
+    </div>
+
+    <h2>🎯 Career Roadmap</h2>
+
+    <div class="box">
+        <ol>
+            <li>Learn the missing technical skills.</li>
+            <li>Practice through real-world projects.</li>
+            <li>Build a strong GitHub portfolio.</li>
+            <li>Complete relevant certifications.</li>
+            <li>Prepare for interviews and placements.</li>
+        </ol>
+    </div>
+
+    <a href="/" class="button">← Analyze Again</a>
+
+</div>
+
+</body>
+</html>

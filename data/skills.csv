@@ -1,0 +1,111 @@
+role,skill
+Data Analyst,Python
+Data Analyst,SQL
+Data Analyst,Excel
+Data Analyst,Statistics
+Data Analyst,Pandas
+Data Analyst,Power BI
+Data Analyst,Data Visualization
+Data Analyst,NumPy
+Data Analyst,Tableau
+Data Analyst,Data Cleaning
+Data Scientist,Python
+Data Scientist,SQL
+Data Scientist,Statistics
+Data Scientist,Pandas
+Data Scientist,NumPy
+Data Scientist,Machine Learning
+Data Scientist,Data Visualization
+Data Scientist,Power BI
+Data Scientist,Scikit-learn
+Data Scientist,Feature Engineering
+Machine Learning Engineer,Python
+Machine Learning Engineer,Statistics
+Machine Learning Engineer,Machine Learning
+Machine Learning Engineer,Deep Learning
+Machine Learning Engineer,TensorFlow
+Machine Learning Engineer,PyTorch
+Machine Learning Engineer,SQL
+Machine Learning Engineer,Git
+Machine Learning Engineer,Scikit-learn
+Machine Learning Engineer,Feature Engineering
+AI Engineer,Python
+AI Engineer,Machine Learning
+AI Engineer,Deep Learning
+AI Engineer,TensorFlow
+AI Engineer,PyTorch
+AI Engineer,NLP
+AI Engineer,Computer Vision
+AI Engineer,Git
+AI Engineer,APIs
+AI Engineer,SQL
+Data Engineer,Python
+Data Engineer,SQL
+Data Engineer,ETL
+Data Engineer,Data Warehousing
+Data Engineer,Apache Spark
+Data Engineer,Hadoop
+Data Engineer,Git
+Data Engineer,Cloud
+Data Engineer,APIs
+Data Engineer,Database
+Web Developer,HTML
+Web Developer,CSS
+Web Developer,JavaScript
+Web Developer,React
+Web Developer,Git
+Web Developer,APIs
+Web Developer,Database
+Web Developer,Responsive Design
+Web Developer,Node.js
+Web Developer,REST API
+Software Developer,Python
+Software Developer,Java
+Software Developer,DSA
+Software Developer,SQL
+Software Developer,Git
+Software Developer,APIs
+Software Developer,Database
+Software Developer,OOP
+Software Developer,Problem Solving
+Software Developer,Testing
+Python Developer,Python
+Python Developer,SQL
+Python Developer,OOP
+Python Developer,Git
+Python Developer,APIs
+Python Developer,Flask
+Python Developer,Django
+Python Developer,Database
+Python Developer,REST API
+Python Developer,Problem Solving
+Business Analyst,Excel
+Business Analyst,SQL
+Business Analyst,Statistics
+Business Analyst,Power BI
+Business Analyst,Data Visualization
+Business Analyst,Communication
+Business Analyst,Problem Solving
+Business Analyst,Requirements Analysis
+Business Analyst,Documentation
+Business Analyst,Data Analysis
+Cybersecurity Analyst,Networking
+Cybersecurity Analyst,Linux
+Cybersecurity Analyst,Python
+Cybersecurity Analyst,Ethical Hacking
+Cybersecurity Analyst,Cybersecurity
+Cybersecurity Analyst,Firewalls
+Cybersecurity Analyst,SIEM
+Cybersecurity Analyst,Incident Response
+Cybersecurity Analyst,Git
+Cybersecurity Analyst,Risk Assessment
+Cloud Engineer,Linux
+Cloud Engineer,Python
+Cloud Engineer,AWS
+Cloud Engineer,Azure
+Cloud Engineer,Docker
+Cloud Engineer,Kubernetes
+Cloud Engineer,Networking
+Cloud Engineer,Git
+Cloud Engineer,Cloud Security
+Cloud Engineer,CI/CD
