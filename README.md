@@ -30,6 +30,14 @@ The current system supports:
 - Data Scientist
 - AI Engineer
 - Web Developer
+- Machine Learning Engineer
+- Data Engineer
+- software Developer
+- Python Developer
+- Business Analyst
+- Cybersecurity Analyst
+- Cloud Engineer
+- Data Analyst
 
 ## Project Structure
 
